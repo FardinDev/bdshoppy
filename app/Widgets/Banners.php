@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 
-class Products extends AbstractWidget
+class Banners extends AbstractWidget
 {
     /**
      * The configuration array.
@@ -22,19 +22,19 @@ class Products extends AbstractWidget
      */
     public function run()
     {
-        $count = \App\Product::count();
-        $string = 'Products';
+        $count = \App\Banner::count();
+        $string = 'Banners';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-truck',
+            'icon'   => 'voyager-images',
             'title'  => "{$count} {$string}",
             'text'   => "",
             'button' => [
                 'class' => 'btn btn-danger',
-                'text' => 'View All Products',
-                'link' => route('voyager.products.index'),
+                'text' => 'View All Banners',
+                'link' => route('voyager.banners.index'),
             ],
-            'image' => 'images/widgets/product.jpg',
+            'image' => 'images/widgets/banner.jpg',
         ]));
     }
 
