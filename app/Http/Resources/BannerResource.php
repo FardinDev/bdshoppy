@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources;
 use TCG\Voyager\Facades\Voyager;
-
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryResource extends JsonResource
+class BannerResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +15,9 @@ class CategoryResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name ? $this->name : '',
-            'icon' => $this->icon ? Voyager::image( $this->icon ) : '',
+            'id' => $this->id,   
+            'image' => $this->img ? Voyager::image( $this->img ) : '',
+            'description' => $this->description ? $this->description : '',
         ];
     }
 }

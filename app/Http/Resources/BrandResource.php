@@ -5,7 +5,7 @@ use TCG\Voyager\Facades\Voyager;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryResource extends JsonResource
+class BrandResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,8 +17,8 @@ class CategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name ? $this->name : '',
-            'icon' => $this->icon ? Voyager::image( $this->icon ) : '',
+            'name' => $this->name,
+            'logo' => $this->logo ? Voyager::image( $this->logo )  : '',
         ];
     }
 }
