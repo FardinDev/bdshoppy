@@ -24,7 +24,7 @@ class ProductResource extends JsonResource
          foreach ($images as $image) {
            array_push($final, Voyager::image( $image ));
          }
-        return (object) $final;
+        return $final;
      }
 
     public function toArray($request)
