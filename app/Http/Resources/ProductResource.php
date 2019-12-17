@@ -43,6 +43,7 @@ class ProductResource extends JsonResource
             'description' => $this->description ? $this->description : '',
             'quantity' => $this->quantity ? $this->quantity : '',
             
+            
         ];
     }
 }
